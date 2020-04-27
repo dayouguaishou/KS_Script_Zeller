@@ -1,3 +1,5 @@
+//day2week(int year,int month,int day)
+
 int years = StrToInt(StrRight(StrFromInt(year, 10), 2));
 if(month == 1)
 {
@@ -14,7 +16,6 @@ int c4 = Int(20/4);
 int a1 =Int((26*(month+1))/10);
 
 int zhou = (years+y4+c4-(2*20)+a1+day-1)%7;
-
 
 return zhou;
 
