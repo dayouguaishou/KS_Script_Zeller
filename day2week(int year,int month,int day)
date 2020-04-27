@@ -1,0 +1,33 @@
+int years = StrToInt(StrRight(StrFromInt(year, 10), 2));
+if(month == 1)
+{
+	month = 13;
+	years = years-1;
+}
+if(month == 2)
+{
+	month = 14;
+	years = years-1;
+}
+int y4 = Int(years/4);
+int c4 = Int(20/4);
+int a1 =Int((26*(month+1))/10);
+
+int zhou = (years+y4+c4-(2*20)+a1+day-1)%7;
+
+
+return zhou;
+
+//蔡勒（Zeller）公式
+
+//w=y+[y/4]+[c/4]-2c+[26(m+1)/10]+d-1
+//w = w%7
+//公式中的符号含义如下，
+//	w：星期；
+//	c：世纪；
+//	y：年（两位数）； 
+//	m：月（m大于等于3，小于等于14，即在蔡勒公式中，
+//		某年的1、2月要看作上一年的13、14月来计算，
+//			比如2003年1月1日要看作2002年的13月1日来计算）；
+//				d：日；
+//      [ ]代表取整，即只要整数部分。
